@@ -3,7 +3,7 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/huawei/hi6210sft/BoardConfigVendor.mk
 
-TTARGET_ARCH := arm64
+TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
