@@ -1,5 +1,1 @@
-# aokp_device_alice
-# device_huawei_hi6210sft
-# device_huawei_hi6210sft
-# aokp_device_alice
-# device_huawei_hi6210sft
+"Primitive" Huawei P8 Lite source code for AOKP 7.1.2
