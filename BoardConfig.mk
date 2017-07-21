@@ -1,0 +1,73 @@
+USE_CAMERA_STUB := true
+
+# inherit from the proprietary version
+-include vendor/huawei/hi6210sft/BoardConfigVendor.mk
+
+TTARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_SMP := true
+TARGET_CPU_VARIANT := cortex-a53
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
+
+ANDROID_64=true
+TARGET_USES_64_BIT_BINDER := true
+
+TARGET_CPU_SMP := true
+ARCH_ARM_HAVE_TLS_REGISTER := true
+ARCH_ARM_HAVE_NEON := true
+
+ENABLE_CPUSETS := true
+
+BOARD_KERNEL_CMDLINE := hisi_dma_print=0 vmalloc=384M maxcpus=8 coherent_pool=512K no_irq_affinity ate_enable=true androidboot.selinux=permissive buildvariant=userdebug
+BOARD_KERNEL_BASE := 0x07478000
+BOARD_KERNEL_PAGESIZE := 2048
+
+# Graphics
+USE_OPENGL_RENDERER := true
+ANDROID_ENABLE_RENDERSCRIPT := true
+TARGET_HARDWARE_3D := true
+TARGET_USE_PAN_DISPLAY := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 6
+BOARD_GLOBAL_CFLAGS += -DFORCE_SCREENSHOT_CPU_PATH
+BOARD_EGL_WORKAROUND_BUG_10194508 := true
+
+# fix this up by examining /proc/mtd on a running device
+BOARD_BOOTIMAGE_PARTITION_SIZE := 26424115
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 70359449
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2814377984
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1245533389
+BOARD_FLASH_BLOCK_SIZE := 131072
+
+TARGET_PREBUILT_KERNEL := device/huawei/hi6210sft/prebuilt/kernel
+
+BOARD_HAS_NO_SELECT_BUTTON := true
+
+# Camera
+USE_CAMERA_STUB := true
+
+# Wifi
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+CONFIG_DRIVER_NL80211 := y
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+# Ril
+BOARD_RIL_CLASS := ../../../device/huawei/hi6210sft/ril
+
+# Recovery
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/fstab.hi6210sft
+TW_BRIGHTNESS_PATH := "/sys/devices/platform/balong_fb.1/leds/lcd_backlight0/brightness"
+TW_CUSTOM_BATTERY_PATH := "/sys/devices/battery.0/power_supply/Battery"
+TW_FBIOPAN := true
+TW_MAX_BRIGHTNESS := 260
+TW_SCREEN_BLANK_ON_BOOT := true
+TW_THEME := portrait_hdpi
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+RECOVERY_SDCARD_ON_DATA := true
