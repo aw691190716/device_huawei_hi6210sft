@@ -15,10 +15,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/locales_full.mk)
 ## Device info
 PRODUCT_DEVICE := hi6210sft
 PRODUCT_NAME := aokp_hi6210sft
-PRODUCT_BRAND := huawei
+PRODUCT_BRAND := Huawei
 PRODUCT_MODEL := hi6210sft
-PRODUCT_MANUFACTURER := huawei
-
+PRODUCT_MANUFACTURER := Huawei
 
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 1280
