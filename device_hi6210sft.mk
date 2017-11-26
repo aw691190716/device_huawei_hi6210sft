@@ -34,6 +34,36 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Audio configuration file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    $(LOCAL_PATH)/prebuilts/audio_policy.conf:system/etc/audio_policy.conf
+
+# Camera
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/camera_orientation.cfg:system/etc/camera_orientation.cfg \
+    $(LOCAL_PATH)/prebuilts/camera_resolutions.cfg:system/etc/camera_resolutions.cfg \
+    $(LOCAL_PATH)/prebuilts/camera_videosnapshot.cfg:system/etc/camera_videosnapshot.cfg
+
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/clatd.conf:system/etc/clatd.conf \
+    $(LOCAL_PATH)/prebuilts/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/prebuilts/gpsconfig.xml:system/etc/gpsconfig.xml \
+    $(LOCAL_PATH)/prebuilts/gpsconfig_beta.xml:system/etc/gpsconfig_beta.xml
+
+# Misc
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/device_monitor_for_nff.conf:system/etc/device_monitor_for_nff.conf \
+    $(LOCAL_PATH)/prebuilts/device_state_monitor.conf:system/etc/device_state_monitor.conf \
+    $(LOCAL_PATH)/prebuilts/hisi_cfg.ini:system/etc/hisi_cfg.ini \
+    $(LOCAL_PATH)/prebuilts/hisi_cfg_alice.ini:system/etc/hisi_cfg_alice.ini
+
+# Thermal engine
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/thermald.xml:system/etc/thermald.xml \
+$(LOCAL_PATH)/prebuilts/thermald_performance.xml:system/etc/thermald_performance.xml
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.primary.default \
@@ -51,10 +81,33 @@ PRODUCT_PACKAGES += \
 # Gello
 PRODUCT_PACKAGES += \
     Gello
+      
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+# Media configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/prebuilts/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/prebuilts/media_profiles.xml:system/etc/media_profiles.xml
 
 # KEYPAD
 PRODUCT_PACKAGES += \
     usbaudio.kl
+  
+# WiFi
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    dhcpcd.conf \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf 
+   
+PRODUCT_COPY_FILES += \
+   $(LOCAL_PATH)/wifi/hostapd_hisi.conf:system/etc/wifi/hostapd_hisi.conf \
+   $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+   $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+   $(LOCAL_PATH)/wifi/wpa_supplicant_hisi.conf:system/etc/wifi/wpa_supplicant_hisi.conf \
+   $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf  
 
 # Ramdisk
 PRODUCT_PACKAGES += \
