@@ -100,6 +100,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     usbaudio.kl
   
+  # Graphics
+ PRODUCT_PACKAGES += \
+	hwcomposer.hi6210sft
+  
 # WiFi
 PRODUCT_PACKAGES += \
     libwpa_client \
