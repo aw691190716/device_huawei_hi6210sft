@@ -4,6 +4,10 @@ $(call inherit-product-if-exists,vendor/huawei/hi6210sft/hi6210sft-vendor.mk)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilts/thermald.xml:system/etc/thermald.xml \
     $(LOCAL_PATH)/prebuilts/thermald_performance.xml:system/etc/thermald_performance.xml
+    
+    # Bootanimation
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
 
 # Permissions
 PRODUCT_COPY_FILES += \
