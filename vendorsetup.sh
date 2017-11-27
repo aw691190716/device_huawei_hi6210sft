@@ -1,1 +1,1 @@
-add_lunch_combo aokp_hi6210sft-eng
+add_lunch_combo aokp_hi6210sft-userdebug
